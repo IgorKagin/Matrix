@@ -5,12 +5,12 @@ set( PROJECT_LANGUAGES CXX )
 project( ${PROJECT_NAME} ${PROJECT_LANGUAGES} )
 
 set( SOURCES
-  matrix.hpp
+  #matrix.hpp
   main.cpp
 )
 
 set(HEADERS
-  #include/matrix.h
+  include/matrix.h
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
