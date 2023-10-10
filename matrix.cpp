@@ -94,7 +94,17 @@ namespace CustomMatrix
     {
       return m_matrixMap.size();
     }
-    
+
+    auto begin()
+    {
+      return m_matrixMap.begin();
+    }
+
+    auto end()
+    {
+      return m_matrixMap.end();
+    }
+
     private:
       std::map<std::pair<size_t, size_t>, T> m_matrixMap;
       StorageOfMatrix                        m_storageControl{ m_matrixMap };
