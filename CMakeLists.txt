@@ -10,7 +10,7 @@ set( SOURCES
 )
 
 set(HEADERS
-  include/matrix.h
+  #include/matrix.h
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
