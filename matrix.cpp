@@ -44,7 +44,6 @@ namespace CustomMatrix
 
       operator T()
       {
-        std::cout << "operator () OF StorageOfMatrix" << std::endl;
         std::pair<size_t, size_t> temp( row, col );
         if ( m_matrixRef.find( temp ) == m_matrixRef.end() )
         {
@@ -57,16 +56,12 @@ namespace CustomMatrix
       }
       StorageOfMatrix& operator[]( const size_t& index )
       {
-        std::cout << "operator[] OF StorageOfMatrix" << std::endl;
         col = index;
-
         return *this;  
       }
 
       void operator = ( const T& value )
       {
-        std::cout << "operator = OF StorageOfMatrix" << std::endl;
-
         m_matrixRef.emplace( std::make_pair( row, col ), value );
       }
     };
@@ -83,9 +78,7 @@ namespace CustomMatrix
 
     StorageOfMatrix& operator[]( size_t index )
     {
-      std::cout << "operator [] OF Matrix" << std::endl;
       m_storageControl.SetIndex( index );
-
       return m_storageControl;
     }
 
