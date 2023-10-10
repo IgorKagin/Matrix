@@ -5,8 +5,8 @@ set( PROJECT_LANGUAGES CXX )
 project( ${PROJECT_NAME} ${PROJECT_LANGUAGES} )
 
 set( SOURCES
-  src/matrix.hpp
-  src/main.cpp
+  matrix.hpp
+  main.cpp
 )
 
 set(HEADERS
