@@ -1,16 +1,18 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.12)
 
 set( PROJECT_NAME matrix )
 set( PROJECT_LANGUAGES CXX )
 project( ${PROJECT_NAME} ${PROJECT_LANGUAGES} )
 
+#add_definitions(-DDEBUG)
+
 set( SOURCES
-  #matrix.hpp
   main.cpp
 )
 
 set(HEADERS
-  include/matrix.h
+  include/matrix.hpp
+  include/matrix.ipp
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
@@ -27,7 +29,7 @@ if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4)
 else()
   target_compile_options(${PROJECT_NAME} PRIVATE
-        -Wall -Wextra -pedantic -Werror)
+        -Wall -Wextra -pedantic )
 endif()
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
