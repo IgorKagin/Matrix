@@ -4,11 +4,6 @@
 #include <array>
 #include <map>
 
-
-using std::cout;
-using std::endl;
-using std::map;
-
 namespace CustomMatrix
 {  
   // Объявление класса матрицы
@@ -136,14 +131,13 @@ namespace CustomMatrix
     //!
     Iterator end() noexcept;
     //!
-    operator std::tuple<int, int, int>()
+    std::tuple<int, int, int> operator[](const std::pair<const std::pair<size_t, size_t>, int>& element)
     {
-    #ifdef DEBUG
-        std::cout << "operator std::tuple<int, int, int>() Of Matrix" << std::endl;
-    #endif
-        auto res = std::make_tuple(1, 1, 314 );
+      #ifdef DEBUG
+      std::cout<<"operator[] of Matrix"<<std::endl;
+      #endif
 
-        return res;
+      return std::make_tuple(element.first.first, element.first.second, element.second);
     }
     private:
       std::map<std::pair<size_t, size_t>, T> m_matrixMap;                      // переменная матрицы
