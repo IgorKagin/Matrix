@@ -5,6 +5,7 @@ using namespace CustomMatrix;
 
 int main( int, char** )
 {
+  std::cout<<"main()"<<std::endl;
   {
     Matrix<int, -1> matrix;
     assert( matrix.size() == 0 ); // все ячейки свободны
@@ -18,18 +19,18 @@ int main( int, char** )
 #ifdef DEBUG
     std::cout << "for: "<< std::endl;
 #endif
-    for ( auto c : matrix )
+    for ( const auto& el : matrix )
     {
 #ifdef DEBUG
-    std::cout << "c: "<< std::endl;
+    std::cout << "el: "<< std::endl;
 #endif
       int x;
       int y;
       int v;
-      //std::tie( x, y, v ) = c;
-      //std::cout << x << y << v << std::endl;
+      std::tie( x, y, v ) = matrix[el];
+      std::cout << x << y << v << std::endl;
     }
-    std::tuple<int, int, int> t = matrix;
+    //std::tuple<int, int, int> t = matrix;
   }
 
 }
